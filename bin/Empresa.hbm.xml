@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-ene-2018 11:01:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="Empresa" table="EMPRESAS">
+  <id access="field" name="cif" type="java.lang.String">
+   <column name="CIF" unique="true"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="nombre" type="java.lang.String">
+   <column name="NOMBRE"/>
+  </property>
+  <property generated="never" lazy="false" name="empleados" type="int">
+   <column name="EMPLEADOS"/>
+  </property>
+  <property generated="never" lazy="false" name="direccion" type="java.lang.String">
+   <column name="DIRECCION"/>
+  </property>
+ </class>
+</hibernate-mapping>
