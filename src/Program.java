@@ -12,29 +12,30 @@ public class Program {
 		
 		// comencem la transaccio
 		session.beginTransaction();	
-		
+	
+		/*
 		//recuperem una cantidad
-		Cantidad c = session.get(Cantidad.class, 1);
+		Item i = session.get(Item.class, 1);
 		
 		//fem el commit
 		session.getTransaction().commit();
 		
 		//Mostrem per pantalla
-		System.out.println(c.getId()+"\t"+c.getNombre()+"\t"+c.getCantidad());
+		System.out.println(i.getId()+"\t"+i.getNombre()+"\t"+i.getCantidad());
 		
 		//tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
 		
-		/*
+		*/
 		
 		// creem el objecte cantidad
-		Cantidad c = new Cantidad();
-		c.setCantidad(1000);
-		c.setNombre("Pedido 1");
+		Item i = new Item();
+		i.setCantidad(1000);
+		i.setNombre("Pedido 1");
 		
 		// salvem l'objecte cantidad
-		session.save(c);
+		session.save(i);
 
 		//fem el commit	
 		session.getTransaction().commit();
@@ -42,7 +43,7 @@ public class Program {
 		// tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
-	
+	/*
 		// recuperem una comanda
 		Pedido p = session.get(Pedido.class, 2);
 		
