@@ -14,7 +14,7 @@ public class Program {
 		session.beginTransaction();	
 	
 		/*
-		//recuperem una cantidad
+		//recuperem un item
 		Item i = session.get(Item.class, 1);
 		
 		//fem el commit
@@ -26,9 +26,8 @@ public class Program {
 		//tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
-		
-		*/
-		
+	
+		/*
 		// creem el objecte cantidad
 		Item i = new Item();
 		i.setCantidad(1000);
@@ -43,16 +42,16 @@ public class Program {
 		// tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
-	/*
+	    /*
 		// recuperem una comanda
-		Pedido p = session.get(Pedido.class, 2);
+		Pedido p = session.get(Pedido.class, 1);
 		
 		// fem el commit
 		session.getTransaction().commit();
 		
 		// imprimim la comanda per pantalla
 		System.out.println("Pedido: "+p.getId()+"\t"+p.getFecha());
-		
+		/*
 		// Tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
@@ -60,10 +59,14 @@ public class Program {
 		// creem la comanda
 		Pedido p = new Pedido();
 		p.setFecha(Date.valueOf("2018-01-17"));
+	
 		
 		// guardem la comanda
 		session.save(p);
 		
+		session.getTransaction().commit();
+		
+		/*
 		// creem una segona comanda
 		Pedido p2 = new Pedido();
 		p2.setFecha(Date.valueOf("2018-01-15"));
@@ -90,13 +93,13 @@ public class Program {
 		
 		// fem el commit
 		session.getTransaction().commit();
-		
+		/*
 		// creem un objecte de tipo usuari recollint el valor de la base de dades 
 		Usuario u = session.get(Usuario.class, 1);
 		
 		// imprimim el usuari per pantalla
 		System.out.println("Hemos recuperado tu usuario: "+u.getNombre()+", Objetivo: "+u.getObjetivo());
-		
+		/*
 		// fem el commit
 		session.getTransaction().commit();
 		
@@ -114,9 +117,9 @@ public class Program {
 		
 		// fem el commit
 		session.getTransaction().commit();
-		
+		*/
 		// recuperem la empresa
-		Empresa e = session.get(Empresa.class, "11111111X");
+		Empresa e = session.get(Empresa.class, "22222222X");
 		//fem el commit
 		session.getTransaction().commit();
 		
@@ -126,19 +129,20 @@ public class Program {
 		
 		// comencem altra transaccio
 		session.beginTransaction();
+		session.getTransaction().commit();
 		// recuperem la segon empresa
-		Empresa e2 = session.get(Empresa.class, "22222222X");
+		/*Empresa e2 = session.get(Empresa.class, "22222222X");
 		// fem el commit
 		session.getTransaction().commit();
 		// imprimim per pantalla
 		System.out.println(
 				e2.getCIF()+"\t"+e2.getNombre()+"\t"+e2.getDireccion()+"\t"+e2.getEmpleados());
-		
+		*/
 		// tanquem la sessio
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
 		
-		*/
+		
 
 	}
 
