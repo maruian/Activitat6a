@@ -12,6 +12,7 @@
   <property name="hibernate.show_sql">true</property>
   <mapping resource="Usuario.hbm.xml"/>
   <mapping resource="Empresa.hbm.xml"/>
+  <mapping resource="Direccion.hbm.xml"/>
   <mapping resource="Pedido.hbm.xml"/>
   <mapping resource="Item.hbm.xml"/>
  </session-factory>

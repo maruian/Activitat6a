@@ -14,9 +14,7 @@
   <property generated="never" lazy="false" name="empleados" type="int">
    <column name="EMPLEADOS"/>
   </property>
-  <property generated="never" lazy="false" name="direccion" type="java.lang.String">
-   <column name="DIRECCION"/>
-  </property>
+  <one-to-one name="direccion" class="Direccion" cascade="save-update" />
   <list name="pedidos" table="PEDIDOS_EMPRESA" inverse="true" cascade="save-update">
   	<key column="ID" />
   	<list-index column="POSICION"></list-index>

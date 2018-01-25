@@ -6,8 +6,12 @@ public class Empresa {
 	private String cif;
 	private String nombre;
 	private int empleados;
-	private String direccion;
+	private Direccion direccion;
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	
+	public Empresa() {
+		setDireccion(new Direccion());
+	}
 	
 	public String getCIF() {
 		return cif;
@@ -27,12 +31,7 @@ public class Empresa {
 	public void setEmpleados(int empleados) {
 		this.empleados = empleados;
 	}
-	public String getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+	
 	public void addPedido(Pedido pedido) {
 		pedido.setEmpresa(this);
 		this.pedidos.add(pedido);
@@ -43,6 +42,14 @@ public class Empresa {
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
+	public Direccion getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+		direccion.setEmpresa(this);
+	}
+	
 	
 	
 }

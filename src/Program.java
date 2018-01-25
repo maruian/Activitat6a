@@ -62,7 +62,10 @@ public class Program {
 		Empresa e = new Empresa();
 		e.setCIF("22222222X");
 		e.setNombre("EMPRESA 2 SL");
-		e.setDireccion("Albal");
+		e.getDireccion().setCalle("Jaume I");
+		e.getDireccion().setCp(46470);
+		e.getDireccion().setPoblacion("Catarroja");
+		
 		e.setEmpleados(50);
 		e.addPedido(p);
 		e.addPedido(p2);
@@ -93,7 +96,12 @@ public class Program {
 		
 		// Imprimir per pantalla
 		System.out.println(
-				e.getCIF()+"\t"+empresa.getNombre()+"\t"+empresa.getDireccion()+"\t"+empresa.getEmpleados());
+				e.getCIF()+"\t"+empresa.getNombre()+"\t"+empresa.getEmpleados());
+		System.out.println("Direccion:");
+		System.out.println("\t"+e.getDireccion().getCalle());
+		System.out.println("\t"+e.getDireccion().getCp()+" "+e.getDireccion().getPoblacion());
+		
+		
 		System.out.println("Pedidos:");
 		for (Pedido pedido: e.getPedidos()) {
 			System.out.println("\t"+pedido.getId()+"\t"+pedido.getFecha());
@@ -101,6 +109,7 @@ public class Program {
 				System.out.println("\t\t"+item.getNombre()+", "+item.getCantidad());
 			}
 		}
+		
 	
 		//fem el commit
 	    session.getTransaction().commit();
@@ -109,8 +118,6 @@ public class Program {
 		session.close();
 		HibernateUtilities.getSessionFactory().close();
 		
-		
-
 	}
 
 }
