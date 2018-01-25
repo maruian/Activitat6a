@@ -11,6 +11,9 @@
         <property name="fecha" type="java.sql.Date">
             <column name="FECHA" />
         </property>
+        <many-to-one name="empresa" class="Empresa" not-null="true">
+       			<column name="Empresa"/>
+       	</many-to-one>
         <list name="items" table="ITEMS_PEDIDO">
         	<key column="ID"/>
         	<list-index column="POSICION">

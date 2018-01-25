@@ -17,5 +17,10 @@
   <property generated="never" lazy="false" name="direccion" type="java.lang.String">
    <column name="DIRECCION"/>
   </property>
+  <list name="pedidos" table="PEDIDOS_EMPRESA" inverse="true" cascade="save-update">
+  	<key column="ID" />
+  	<list-index column="POSICION"></list-index>
+  	<one-to-many class="Pedido" />
+  </list>
  </class>
 </hibernate-mapping>

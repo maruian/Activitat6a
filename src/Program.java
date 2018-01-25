@@ -64,7 +64,8 @@ public class Program {
 		e.setNombre("EMPRESA 2 SL");
 		e.setDireccion("Albal");
 		e.setEmpleados(50);
-		
+		e.addPedido(p);
+		e.addPedido(p2);
 		// salvem l'objecte a la base de dades
 		session.save(e);
 		
@@ -93,7 +94,14 @@ public class Program {
 		// Imprimir per pantalla
 		System.out.println(
 				e.getCIF()+"\t"+empresa.getNombre()+"\t"+empresa.getDireccion()+"\t"+empresa.getEmpleados());
-		
+		System.out.println("Pedidos:");
+		for (Pedido pedido: e.getPedidos()) {
+			System.out.println("\t"+pedido.getId()+"\t"+pedido.getFecha());
+			for (Item item: pedido.getItems()) {
+				System.out.println("\t\t"+item.getNombre()+", "+item.getCantidad());
+			}
+		}
+	
 		//fem el commit
 	    session.getTransaction().commit();
 				

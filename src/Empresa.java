@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Empresa {
 	
@@ -5,7 +7,8 @@ public class Empresa {
 	private String nombre;
 	private int empleados;
 	private String direccion;
-		
+	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	
 	public String getCIF() {
 		return cif;
 	}
@@ -29,6 +32,16 @@ public class Empresa {
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+	public void addPedido(Pedido pedido) {
+		pedido.setEmpresa(this);
+		this.pedidos.add(pedido);
+	}
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 	
 	

@@ -5,6 +5,7 @@ import java.util.List;
 public class Pedido {
 	private int id;
 	private Date fecha;
+	private Empresa empresa;
 	private List<Item> items = new ArrayList<Item>();
 	
 	public int getId() {
@@ -24,6 +25,12 @@ public class Pedido {
 	}
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 	
 	
